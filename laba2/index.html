@@ -3,51 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.png" type="image/png">
     <style>
         .delete-button {
-            background-image: url('cross.png');
-            background-size: contain; 
-            width: 15px;
-            height: 15px;
-            border: none;
+            color: red; /* Задаем белый цвет текста */
             cursor: pointer;
         }
     </style>
     <title>Laba1</title>
 </head>
 <body>
-    <div>
+    <div id="myDIV" class="header">
         <h2>Список дел</h2>
         <input type="text" placeholder="Новый элемент списка">
         <button onclick="" class="addBtn">Добавить</button>
-        <button onclick="" class="dellBtn">Убрать всё</button>
       </div>
       
-      <ol>
+      <ol id="myUL">
         <li>
             <input type="checkbox"> Попасть в спортзал
-            <button  class="delete-button"></button>
+            <button  class="delete-button">X</button>
         </li>
         <li>
             <input type="checkbox"> Оплатить счета
-            <button class="delete-button"></button>
+            <button class="delete-button">X</button>
         </li>
         <li>
             <input type="checkbox"> Познакомься с Джорджем
-            <button class="delete-button"></button>
+            <button class="delete-button">X</button>
         </li>
         <li>
             <input type="checkbox"> Купить яйца
-            <button class="delete-button"></button>
+            <button class="delete-button">X</button>
         </li>
         <li>
             <input type="checkbox"> Прочитать книгу
-            <button class="delete-button"></button>
+            <button class="delete-button">X</button>
         </li>
         <li>
             <input type="checkbox"> Организовать офис
-            <button class="delete-button"></button>
+            <button class="delete-button">X</button>
         </li>
     </ol>    
 </body>
