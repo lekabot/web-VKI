@@ -1,2 +1,2 @@
 # web-VKI
-front
+Laboratory work done on the front
