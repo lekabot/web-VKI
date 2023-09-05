@@ -1,2 +1,2 @@
 # web-VKI
-Laboratory work done on the front
+To do list developed by Ilya Lopatin as laboratory work for the VKI
