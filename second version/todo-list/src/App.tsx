@@ -25,7 +25,15 @@ function App() {
       task.isDone = isDone
       setTasks({ ...tasksObj })
     }
+  }
 
+  function changeTaskTitle(taskId: string, newTitle: string, todoListsId: string) {
+    let tasks = tasksObj[todoListsId]
+    let task = tasks.find(t => t.id === taskId)
+    if (task) {
+      task.title = newTitle
+      setTasks({ ...tasksObj })
+    }
   }
 
   function removeTask(id: string, todoListsId: string) {
@@ -58,6 +66,14 @@ function App() {
     setTasks({ ...tasksObj })
   }
 
+  function changeTodolistTitle(todolistId: string, newTitle: string) {
+    const todolst = todolists.find(tl => tl.id === todolistId)
+    if(todolst) {
+      todolst.title = newTitle
+      setTodolist([...todolists])
+    }
+  }
+
   let todoListsId1 = v1()
   let todoListsId2 = v1()
 
@@ -87,6 +103,8 @@ function App() {
       { id: v1(), title: "Water", isDone: true }],
   });
 
+
+
   function addTodolist(title: string){
     let todolist: TodolistType = {
       id: v1(),
@@ -112,7 +130,8 @@ function App() {
           if (tl.filter === "active") {
             tasksForTodolist = tasksForTodolist.filter(t => t.isDone === false)
           }
-          return <Todolist title={tl.title}
+          return <Todolist 
+            title={tl.title}
             key={tl.id}
             id={tl.id}
             tasks={tasksForTodolist}
@@ -122,6 +141,8 @@ function App() {
             changeStatus={changeStatus}
             filter={tl.filter}
             removeTodolist={removeTodolist}
+            changeTaskTitle={changeTaskTitle}
+            changeTodolistTitle={changeTodolistTitle}
           />
         })
       }
